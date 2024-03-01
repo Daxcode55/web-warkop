@@ -47,3 +47,21 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " activeAbout";
 }
+
+
+
+const searchBtn = document.querySelector("#search");
+const searchform = document.querySelector(".search-form");
+const inputSearch = document.querySelector("#inputSearch");
+searchBtn.onclick = (e) => {
+  console.log("rifki")
+  searchform.classList.toggle("active");
+  inputSearch.focus();
+  e.preventDefault()
+};
+
+document.addEventListener("click", (e) => {
+  if (!searchBtn.contains(e.target) && !navbarNav.contains(e.target)) {
+    searchform.classList.remove("active");
+  }
+});

@@ -13,12 +13,14 @@
   outline: none;
   border: none;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
   color: var(--w);
+  
 }
 
 .navbar {
@@ -82,6 +84,36 @@ body {
 .navbar .navbar-extra a:hover {
   color: var(--primary);
   transition: 0.2s;
+}
+
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  width: 40%;
+  background-color: var(--w);
+  padding-right: 12px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.2s ease-in;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  width: 100%;
+  padding: 1rem 2.3rem 1rem 1rem;
+  background: none;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.navbar .search-form a {
+  color: var(--bg);
 }
 
 #hamburger-menu {
@@ -272,6 +304,26 @@ body {
   border-radius: 50%;
 }
 
+.produk {
+  padding: 10rem 7% 1.4rem;
+}
+
+.produk .content-produk {
+  margin-top: 2rem;
+}
+
+.produk .content-produk img {
+  max-width: 100%;
+}
+
+.produk h2 {
+  font-size: 2.6rem;
+}
+
+.produk h2 span {
+  color: var(--primary);
+}
+
 .contact {
   padding: 10rem 7% 1.4rem;
 }
@@ -407,6 +459,11 @@ footer .credit p {
   .container-content .content-about .about-img img {
     height: 400px;
   }
+
+  .navbar .search-form {
+    width: 70%;
+    margin: auto;
+  }
 }
 
 /* handphone */
@@ -441,5 +498,9 @@ footer .credit p {
 
   .contact .row .form-input {
     margin-top: 20px;
+  }
+
+  .navbar .search-form {
+    right: 13%;
   }
 }
