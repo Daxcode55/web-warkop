@@ -306,22 +306,143 @@ body {
 
 .produk {
   padding: 10rem 7% 1.4rem;
+  position: relative;
+  margin-bottom: 7rem;
 }
 
 .produk .content-produk {
   margin-top: 2rem;
+  display: none;
+  animation: slide 0.7s;
+}
+
+@keyframes slide {
+  from {
+      transform: translate3d(0, -5%, 0) ;
+      opacity: 0;
+  }
+
+  60% {
+      /* transform: skewX(-10deg); */
+      opacity: 1;
+  }
+
+  to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+  }
 }
 
 .produk .content-produk img {
   max-width: 100%;
 }
 
+.content-produk .wraper-btn-resize {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.content-produk .btn-resize-produk {
+  display: inline;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.content-produk .btn-resize-produk:hover {
+  color: var(--primary);
+  transition: 0.3s;
+}
+
 .produk h2 {
   font-size: 2.6rem;
 }
 
+.produk .wraper-arrow {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  left: 46%;
+  right: 46%;
+  margin-top: 2rem;
+  animation: arrowDown 0.5s infinite alternate;
+  cursor: pointer;
+}
+
+@keyframes arrowDown {
+  0% {top: 100%;}
+  /* 50% {top: 105%;} */
+  100% {top: 110%;}
+}
+
+.produk .arr-down {
+  font-size: 50px;
+}
+
+
+
 .produk h2 span {
   color: var(--primary);
+}
+
+.wraper-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 4rem;
+}
+
+.wraper-cards .card {
+  background-color: rgb(140, 140, 140);
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.card .wraper-shop {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.312);
+  transform: scaleY(0);
+  transition: 0.2s;
+  transform-origin: top;
+}
+
+.card:hover .wraper-shop {
+  transform: scaleY(1);
+}
+
+.card .wraper-shop .icon-hide {
+  margin-right: 15px;
+}
+
+
+
+.card .desc-card {
+  padding: 10px 7px;
+}
+
+.card .desc-card p {
+  color: black;
+  font-size: 1.3rem;
+}
+
+.card .desc-card .star {
+  fill: yellow;
+  margin-bottom: 0.5rem;
 }
 
 .contact {
@@ -502,5 +623,26 @@ footer .credit p {
 
   .navbar .search-form {
     right: 13%;
+  }
+
+  .wraper-cards .card {
+    width: 200px;
+  }
+
+  @keyframes slide {
+    from {
+        transform: translate3d(0, -2%, 0) ;
+        opacity: 0;
+    }
+  
+    60% {
+        /* transform: skewX(-10deg); */
+        opacity: 1;
+    }
+  
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
   }
 }

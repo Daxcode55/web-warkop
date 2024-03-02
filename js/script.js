@@ -65,3 +65,20 @@ document.addEventListener("click", (e) => {
     searchform.classList.remove("active");
   }
 });
+
+
+const wrapArr = document.querySelector(".wraper-arrow");
+const wrapContent = document.querySelector('.content-produk');
+const containPrduct = document.querySelector(".produk");
+
+wrapArr.onclick = () => {
+  wrapContent.style.display = "block";
+  wrapArr.style.display = "none";
+  containPrduct.style.marginBottom = "0";
+}
+
+document.querySelector('.btn-resize-produk').onclick = () => {
+  wrapContent.style.display = "none";
+  wrapArr.style.display = "flex";
+  containPrduct.style.marginBottom = "7rem";
+}
