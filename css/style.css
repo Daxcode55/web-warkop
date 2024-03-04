@@ -20,7 +20,6 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
   color: var(--w);
-  
 }
 
 .navbar {
@@ -318,18 +317,18 @@ body {
 
 @keyframes slide {
   from {
-      transform: translate3d(0, -5%, 0) ;
-      opacity: 0;
+    transform: translate3d(0, -5%, 0);
+    opacity: 0;
   }
 
   60% {
-      /* transform: skewX(-10deg); */
-      opacity: 1;
+    /* transform: skewX(-10deg); */
+    opacity: 1;
   }
 
   to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -367,24 +366,26 @@ body {
   align-items: center;
   position: absolute;
   top: 100%;
-  left: 46%;
-  right: 46%;
-  margin-top: 2rem;
+  left: 0;
+  right: 0;
+  margin: auto;
   animation: arrowDown 0.5s infinite alternate;
   cursor: pointer;
 }
 
 @keyframes arrowDown {
-  0% {top: 100%;}
-  /* 50% {top: 105%;} */
-  100% {top: 110%;}
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: 110%;
+  }
 }
 
 .produk .arr-down {
   font-size: 50px;
 }
-
-
 
 .produk h2 span {
   color: var(--primary);
@@ -429,8 +430,6 @@ body {
   margin-right: 15px;
 }
 
-
-
 .card .desc-card {
   padding: 10px 7px;
 }
@@ -443,6 +442,91 @@ body {
 .card .desc-card .star {
   fill: yellow;
   margin-bottom: 0.5rem;
+}
+
+/* modal box */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 150px;
+  background-color: rgba(255, 255, 255, 0.116);
+}
+
+.modal .modal-content {
+  width: 50%;
+  margin: auto;
+  padding: 1.2rem;
+  background-color: #fefefe;
+  color: black;
+  border-radius: 10px;
+  animation: showModal 0.5s;
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal .modal-content .main-content-modal {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.modal-content .main-content-modal img {
+  width: 20rem;
+  border-radius: 5px;
+}
+
+.main-content-modal .desc-modal {
+  max-width: 50%;
+  margin-left: 20px;
+}
+
+.desc-modal h3 {
+  font-size: 2rem;
+}
+
+.desc-modal p {
+  margin: 1rem 0;
+}
+
+.desc-modal button {
+  padding: 1.2rem 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary);
+  color: var(--w);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.desc-modal button:hover {
+  background-color: #d39455;
+  transition: 0.3s;
+}
+
+.modal-content .close-modal {
+  float: right;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-content .close-modal:hover {
+  color: rgb(161, 38, 38);
+  transition: 0.3s;
 }
 
 .contact {
@@ -585,6 +669,10 @@ footer .credit p {
     width: 70%;
     margin: auto;
   }
+
+  .modal .modal-content {
+    width: 60%;
+  }
 }
 
 /* handphone */
@@ -631,18 +719,38 @@ footer .credit p {
 
   @keyframes slide {
     from {
-        transform: translate3d(0, -2%, 0) ;
-        opacity: 0;
+      transform: translate3d(0, -2%, 0);
+      opacity: 0;
     }
-  
+
     60% {
-        /* transform: skewX(-10deg); */
-        opacity: 1;
+      /* transform: skewX(-10deg); */
+      opacity: 1;
     }
-  
+
     to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
     }
+  }
+
+  .modal .modal-content .main-content-modal {
+    flex-direction: column;
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+  .main-content-modal .desc-modal {
+    padding: 10px;
+    max-width: 100%;
+    margin: 10px 0 0 0;
+  }
+
+  .desc-modal h3 {
+    text-align: center;
+  }
+
+  .desc-modal button {
+    padding: 1rem 1.5rem;
   }
 }

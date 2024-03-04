@@ -48,16 +48,14 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " activeAbout";
 }
 
-
-
 const searchBtn = document.querySelector("#search");
 const searchform = document.querySelector(".search-form");
 const inputSearch = document.querySelector("#inputSearch");
 searchBtn.onclick = (e) => {
-  console.log("rifki")
+  console.log("rifki");
   searchform.classList.toggle("active");
   inputSearch.focus();
-  e.preventDefault()
+  e.preventDefault();
 };
 
 document.addEventListener("click", (e) => {
@@ -66,19 +64,38 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
 const wrapArr = document.querySelector(".wraper-arrow");
-const wrapContent = document.querySelector('.content-produk');
+const wrapContent = document.querySelector(".content-produk");
 const containPrduct = document.querySelector(".produk");
 
 wrapArr.onclick = () => {
   wrapContent.style.display = "block";
   wrapArr.style.display = "none";
   containPrduct.style.marginBottom = "0";
-}
+};
 
-document.querySelector('.btn-resize-produk').onclick = () => {
+document.querySelector(".btn-resize-produk").onclick = () => {
   wrapContent.style.display = "none";
   wrapArr.style.display = "flex";
   containPrduct.style.marginBottom = "7rem";
-}
+};
+
+// modal box
+let modalBox = document.querySelector(".modal");
+let eyes = document.querySelectorAll("#eye");
+
+eyes.forEach((eye) => {
+  eye.addEventListener("click", () => {
+    modalBox.style.display = "block";
+  });
+});
+
+document.querySelector(".close-modal").onclick = () => {
+  modalBox.style.display = "none";
+};
+
+window.onclick = (e) => {
+  if (e.target == modalBox) {
+    modalBox.style.display = "none";
+  }
+};
