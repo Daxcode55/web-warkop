@@ -27,13 +27,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%;
-  background-color: rgba(1, 1, 1, 0.8);
-  border-bottom: 1px solid #4d3925;
+  background-color: rgba(1, 1, 1, 0);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
+  transition: 0.8s;
 }
 
 .navbar .navbar-logo {
@@ -710,7 +710,7 @@ footer .credit p {
 
   .col-desc-content .desc-img p {
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .menu h2 {

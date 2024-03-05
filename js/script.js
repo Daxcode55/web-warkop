@@ -52,7 +52,6 @@ const searchBtn = document.querySelector("#search");
 const searchform = document.querySelector(".search-form");
 const inputSearch = document.querySelector("#inputSearch");
 searchBtn.onclick = (e) => {
-  console.log("rifki");
   searchform.classList.toggle("active");
   inputSearch.focus();
   e.preventDefault();
@@ -99,3 +98,18 @@ window.onclick = (e) => {
     modalBox.style.display = "none";
   }
 };
+
+
+window.onscroll = () => {
+  let top = document.body.scrollTop;
+  let top2 = document.documentElement.scrollTop;
+  let navbar = document.querySelector('.navbar');
+
+  if (top > 80 || top2 > 80 ) {
+    navbar.style.backgroundColor = "rgba(1, 1, 1, 0.8)";    
+  } else {
+    navbar.style.backgroundColor = "rgba(1, 1, 1, 0)";
+    navbar.style.borderBottom = "none";
+  }
+
+}
