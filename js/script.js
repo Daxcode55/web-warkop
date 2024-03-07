@@ -1,52 +1,29 @@
-const navbarNav = document.querySelector(".navbar-nav");
+window.onscroll = () => {
+  let top = document.body.scrollTop;
+  let top2 = document.documentElement.scrollTop;
+  let navbar = document.querySelector(".navbar");
 
-document.querySelector("#hamburger-menu").onclick = (e) => {
+  if (top > 80 || top2 > 80) {
+    navbar.style.backgroundColor = "rgba(1, 1, 1, 0.8)";
+  } else {
+    navbar.style.backgroundColor = "rgba(1, 1, 1, 0)";
+    navbar.style.borderBottom = "none";
+  }
+};
+
+const navbarNav = document.querySelector(".navbar-nav");
+const hamburger = document.querySelector("#hamburger-menu");
+
+hamburger.onclick = (e) => {
   navbarNav.classList.toggle("active");
   e.preventDefault();
 };
 
-const hamburger = document.querySelector("#hamburger-menu");
 document.addEventListener("click", (e) => {
   if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
     navbarNav.classList.remove("active");
   }
 });
-
-// // slide show
-// let slideIndex = 1;
-// showSlides(slideIndex);
-
-// function plusSlides(n) {
-//   showSlides((slideIndex += n));
-// }
-
-// function currentSlide(n) {
-//   showSlides((slideIndex = n));
-// }
-
-// function showSlides(n) {
-//   let i;
-//   let slides = document.querySelectorAll(".wraper-content");
-//   let dots = document.querySelectorAll(".dot");
-
-//   if (n > slides.length) {
-//     slideIndex = 1;
-//   }
-//   if (n < 1) {
-//     slideIndex = slides.length;
-//   }
-
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" activeAbout", "");
-//   }
-
-//   slides[slideIndex - 1].style.display = "block";
-//   dots[slideIndex - 1].className += " activeAbout";
-// }
 
 const searchBtn = document.querySelector("#search");
 const searchform = document.querySelector(".search-form");
@@ -99,17 +76,24 @@ window.onclick = (e) => {
   }
 };
 
+// open page menu
+function openPageMenu(pageName, elmnt, color) {
+  let i;
+  const wrapMenuContent = document.querySelectorAll(".wraper-menu-content");
+  let btnLink = document.querySelectorAll(".link-btn");
 
-window.onscroll = () => {
-  let top = document.body.scrollTop;
-  let top2 = document.documentElement.scrollTop;
-  let navbar = document.querySelector('.navbar');
-
-  if (top > 80 || top2 > 80 ) {
-    navbar.style.backgroundColor = "rgba(1, 1, 1, 0.8)";    
-  } else {
-    navbar.style.backgroundColor = "rgba(1, 1, 1, 0)";
-    navbar.style.borderBottom = "none";
+  for (i = 0; i < wrapMenuContent.length; i++) {
+    wrapMenuContent[i].style.display = "none";
   }
 
+  for (i = 0; i < btnLink.length; i++) {
+    btnLink[i].style.background = "";
+    btnLink[i].style.color = "";
+  }
+
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.background = color;
+  elmnt.style.color = "white";
 }
+
+document.getElementById("defaultOpen").click();
