@@ -56,23 +56,68 @@ document.querySelector(".btn-resize-produk").onclick = () => {
   containPrduct.style.marginBottom = "7rem";
 };
 
-// modal box
-let modalBox = document.querySelector(".modal");
-let eyes = document.querySelectorAll("#eye");
+// data menu
+const menu = [
+  {
+    name: 'Expresso',
+    img: 'assets/express-menu.png'
+  },
 
-eyes.forEach((eye) => {
-  eye.addEventListener("click", () => {
-    modalBox.style.display = "block";
+  {
+    name: 'Americano Coffe',
+    img: 'assets/produk-kopi.jpg'
+  }
+]
+
+
+// render modal box
+let modalParent = document.querySelector(".modal");
+
+function renderModalBox(m) {
+  let modalContent = `
+  <div class="modal-content">
+      <i class="fa-solid fa-x close-modal" onclick="closeModal()"></i>
+      <div class="main-content-modal">
+        <img src="${m.img}" alt="" />
+        <div class="desc-modal">
+        <h3>${m.name}</h3>
+        <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque
+        accusantium tempora officiis porro libero quo aliquid odit? Omnis
+        culpa veritatis aliquid eveniet veniam adipisci error ipsam eum
+        atque, magni facilis!
+        </p>
+        <button>Pesan Sekarang</button>
+      </div>
+    </div>
+  </div>
+  `;
+  modalParent.innerHTML = modalContent;
+}
+
+let cardsMenu = document.querySelectorAll(".card-menu");
+cardsMenu.forEach(card => {
+  card.addEventListener("click", () => {
+    renderModalBox(menu[0]);
+    modalParent.style.display = "block";
   });
 });
 
-document.querySelector(".close-modal").onclick = () => {
-  modalBox.style.display = "none";
-};
+let eyes = document.querySelectorAll('#eye');
+eyes.forEach(eye => {
+  eye.addEventListener('click', () => {
+    renderModalBox(menu[1]);
+    modalParent.style.display = "block";
+  })
+})
+
+function closeModal() {
+  modalParent.style.display = "none";
+}
 
 window.onclick = (e) => {
-  if (e.target == modalBox) {
-    modalBox.style.display = "none";
+  if (e.target == modalParent) {
+    modalParent.style.display = "none";
   }
 };
 
