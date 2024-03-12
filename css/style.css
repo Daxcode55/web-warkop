@@ -184,7 +184,7 @@ body {
   margin-top: 10rem;
   padding: 4.4rem 5.8rem 4rem;
   border-radius: 50px 50px 0 0;
-  background-color: #090909;
+  background-color: #0f0f0f;
 }
 
 .about h2 {
@@ -330,7 +330,7 @@ body {
   padding: 2.2rem 4rem;
   margin: 2.8rem 0;
   border-radius: 30px;
-  background-color: #080808;
+  background-color: #0f0f0f;
 }
 
 .wraper-menu-content {
@@ -388,144 +388,41 @@ body {
 }
 
 .produk {
-  padding: 10rem 7% 1.4rem;
-  position: relative;
-  margin-bottom: 7rem;
-}
-
-.produk .content-produk {
-  margin-top: 2rem;
-  display: none;
-  animation: slide 0.7s;
-}
-
-@keyframes slide {
-  from {
-    transform: translate3d(0, -5%, 0);
-    opacity: 0;
-  }
-
-  60% {
-    /* transform: skewX(-10deg); */
-    opacity: 1;
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.produk .content-produk img {
-  max-width: 100%;
-}
-
-.content-produk .wraper-btn-resize {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.content-produk .btn-resize-produk {
-  display: inline;
-  font-size: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.content-produk .btn-resize-produk:hover {
-  color: var(--primary);
-  transition: 0.3s;
+  background-color: #0f0f0f;
+  margin: 6rem 5% 1.4rem;
+  border-radius: 30px;
+  padding: 4.4rem 3rem 3.8rem;
 }
 
 .produk h2 {
-  font-size: 2.6rem;
-}
-
-.produk .wraper-arrow {
-  width: max-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  animation: arrowDown 0.5s infinite alternate;
-  cursor: pointer;
-}
-
-@keyframes arrowDown {
-  0% {
-    top: 100%;
-  }
-
-  100% {
-    top: 110%;
-  }
-}
-
-.produk .arr-down {
-  font-size: 50px;
-}
-
-.produk h2 span {
+  font-size: 4rem;
+  text-align: center;
   color: var(--primary);
 }
 
-.wraper-cards {
+.produk p {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+
+.produk .overflowBenefits {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5rem;
   margin-top: 4rem;
+
 }
 
-.wraper-cards .card {
-  background-color: rgb(140, 140, 140);
-  width: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-}
-
-.card .wraper-shop {
-  width: 100%;
-  height: 70px;
+.produk .overflowBenefits .container-benefits {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 15px;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.312);
-  transform: scaleY(0);
-  transition: 0.2s;
-  transform-origin: top;
+  justify-content: center;
+  gap: 2.4rem;
+  width: max-content;
+  margin: 0 auto;
 }
 
-.card:hover .wraper-shop {
-  transform: scaleY(1);
-}
-
-.card .wraper-shop .icon-hide {
-  margin-right: 15px;
-}
-
-.card .desc-card {
-  padding: 10px 7px;
-}
-
-.card .desc-card p {
-  color: black;
-  font-size: 1.3rem;
-}
-
-.card .desc-card .star {
-  fill: yellow;
-  margin-bottom: 0.5rem;
+.produk .overflowBenefits .container-benefits img {
+  border-radius: 17px;
+  width: 28%;
 }
 
 /* modal box */
@@ -785,6 +682,15 @@ footer .credit p {
   .modal .modal-content {
     width: 60%;
   }
+
+  .produk .overflowBenefits .container-benefits {
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .produk .overflowBenefits .container-benefits img {
+    width: 30%;
+  }
 }
 
 /* handphone */
@@ -849,7 +755,6 @@ footer .credit p {
 
   .menu .hto {
     padding: 1.2rem 1rem;
-    /* border: 1px solid red; */
   }
 
   .menu .hto p {
@@ -942,6 +847,36 @@ footer .credit p {
       transform: translate3d(0, 0, 0);
     }
   }
+
+  /* .produk {
+    margin: 6rem 0 0;
+    border-radius: 0;
+  } */
+
+  .produk h2 {
+    font-size: 3rem;
+  }
+
+  .produk p {
+    font-size: 1.2rem;
+  }
+
+  .produk .overflowBenefits {
+    overflow-x: scroll;
+  }
+
+  .produk .overflowBenefits .container-benefits {
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .produk .overflowBenefits .container-benefits img {
+    width: 100%;
+    margin: 0;
+  }
+
+
 
   .modal .modal-content .main-content-modal {
     flex-direction: column;

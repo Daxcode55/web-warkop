@@ -40,22 +40,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-const wrapArr = document.querySelector(".wraper-arrow");
-const wrapContent = document.querySelector(".content-produk");
-const containPrduct = document.querySelector(".produk");
-
-wrapArr.onclick = () => {
-  wrapContent.style.display = "block";
-  wrapArr.style.display = "none";
-  containPrduct.style.marginBottom = "0";
-};
-
-document.querySelector(".btn-resize-produk").onclick = () => {
-  wrapContent.style.display = "none";
-  wrapArr.style.display = "flex";
-  containPrduct.style.marginBottom = "7rem";
-};
-
 // data menu
 const menu = [
   {
@@ -103,14 +87,6 @@ cardsMenu.forEach(card => {
   });
 });
 
-let eyes = document.querySelectorAll('#eye');
-eyes.forEach(eye => {
-  eye.addEventListener('click', () => {
-    renderModalBox(menu[1]);
-    modalParent.style.display = "block";
-  })
-})
-
 function closeModal() {
   modalParent.style.display = "none";
 }
@@ -124,7 +100,7 @@ window.onclick = (e) => {
 // open page menu
 function openPageMenu(pageName, elmnt, color) {
   let i;
-  const wrapMenuContent = document.querySelectorAll(".wraper-menu-content");
+  let wrapMenuContent = document.querySelectorAll(".wraper-menu-content");
   let btnLink = document.querySelectorAll(".link-btn");
 
   for (i = 0; i < wrapMenuContent.length; i++) {
