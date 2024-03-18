@@ -409,20 +409,19 @@ body {
 .produk .overflowBenefits {
   display: flex;
   margin-top: 4rem;
-
 }
 
 .produk .overflowBenefits .container-benefits {
   display: flex;
   justify-content: center;
   gap: 2.4rem;
-  width: max-content;
   margin: 0 auto;
 }
 
 .produk .overflowBenefits .container-benefits img {
   border-radius: 17px;
-  width: 28%;
+  width: 30.4%;
+  height: auto;
 }
 
 /* modal box */
@@ -516,80 +515,205 @@ body {
   padding: 10rem 7% 1.4rem;
 }
 
-.contact .row {
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
-  background-color: #222;
-  flex-wrap: wrap;
-}
-
-.contact .row .map {
-  flex: 50%;
-  height: 450px;
-}
-
-.contact .row .form-input {
-  flex: 50%;
+.contact h2 {
+  font-size: 4rem;
+  color: var(--primary);
   text-align: center;
 }
 
+.contact .kontak-desc {
+  font-size: 1.8rem;
+  font-weight: 200;
+  text-align: center;
+}
+
+.contact .row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.contact .row .col-1 {
+  width: 50%;
+  padding: 1.8rem 3rem;
+  max-height: 650px;
+  border-radius: 30px;
+  background-image: linear-gradient(20deg, rgb(60,42,33) 20%,rgb(81,59,43), rgb(164,127,82),rgb(182,142,91) );
+}
+
+.row .col-1 h3 {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.603);
+  margin-bottom: 1rem;
+}
+
+.row .col-1 .desc-col {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.603);
+}
+
+.row .col-1 p {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.row .col-1 .group-info {
+  margin-top: 3.8rem;
+}
+
+.row .col-1 .group-info .info {
+  display: flex;
+  margin-top: 2rem;
+  gap: 1.8rem;
+}
+
+.group-info .info i{
+  font-size: 2rem;
+}
+
+.contact .row .form-input {
+  width: 50%;
+}
+
 .row .form-input .input-group {
-  border: 1px solid var(--w);
+  /* border: 1px solid var(--primary); */
+  width: 100%;
   display: flex;
   align-items: center;
-  padding-left: 20px;
-  margin: 1rem;
+  margin-bottom: 3rem;
+  border-radius: 20px;
+  padding: 10px 10px 10px 15px;
+  background-color: white;
+}
+
+.form-input .input-group i {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.692);
 }
 
 .form-input .input-group input {
-  width: 90%;
-  padding: 1rem 1.4rem;
+  width: 100%;
+  height: 3rem;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: grey;
   background: none;
-  color: var(--w);
 }
 
-.contact .row .form-input button {
-  margin: auto;
-  padding: 0.7rem 2.7rem;
-  font-size: 1.4rem;
-  color: var(--w);
-  background-color: var(--primary);
-  cursor: pointer;
+.form-input .input-group .textArea {
+  color: grey;
 }
+
+.form-input button {
+  cursor: pointer;
+  width: 100%;
+  padding: 17px 0;
+  margin-top: 2rem;
+  background-color: var(--primary);
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.form-input button:hover {
+  background-color: #c99765;
+  transition: 0.3s;
+}
+
 
 footer {
-  height: 15rem;
   background-color: var(--primary);
   margin-top: 6rem;
+  background-color: #0F0F0F;
+  padding: 3rem 7% 4rem;
+}
+
+footer .footer-row-1 {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7rem;
+}
+
+.footer-row-1 h2 {
+  font-size: 2.9rem;
+  font-style: italic;
+}
+
+.footer-row-1 h2 span {
+  color: var(--primary);
+}
+
+.footer-row-1 .customer-center {
+  width: 30%;
+}
+
+.footer-row-1 .customer-center > p{
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 1.3rem;
+}
+
+.footer-row-1 .customer-center .group-customer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-row-1 .customer-center .group-customer i {
+  color: var(--primary);
+  font-size: 1.7rem;
+}
+
+
+.footer-row-1 .nav-bottom > p {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 1.3rem;
+}
+
+.footer-row-1 .nav-bottom .links-bottom {
+  display: flex;
   flex-direction: column;
 }
 
-footer .social-media .icon {
-  color: rgb(46, 35, 35);
-  margin: 0 5px 0;
-  cursor: pointer;
-}
-
-footer .nav-bottom {
-  margin: 1rem 0;
-}
-
-footer .nav-bottom a {
+.footer-row-1 .nav-bottom .links-bottom a {
   color: var(--w);
-  margin: 0 10px;
+  margin-bottom: 0.6rem;
 }
 
-footer .nav-bottom a:hover {
-  color: rgb(46, 35, 35);
+.footer-row-1 .nav-bottom .links-bottom a:hover {
+  color: var(--primary);
 }
 
-footer .credit p {
-  color: rgb(46, 35, 35);
+
+footer .footer-row-2 {
+  display: flex;
+  justify-content: space-between;
 }
+
+footer .footer-row-2 > p {
+  color: rgba(255, 255, 255, 0.596);
+}
+
+footer .footer-row-2 .social-media-groups {
+  display: flex;
+  gap: 1.7rem;
+}
+
+footer .footer-row-2 .social-media-groups i {
+  background-color: rgba(0, 0, 0, 0.534);
+  border-radius: 30px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+
 
 /* media query */
 
@@ -691,6 +815,8 @@ footer .credit p {
   .produk .overflowBenefits .container-benefits img {
     width: 30%;
   }
+
+
 }
 
 /* handphone */
@@ -876,8 +1002,6 @@ footer .credit p {
     margin: 0;
   }
 
-
-
   .modal .modal-content .main-content-modal {
     flex-direction: column;
     margin-top: 3rem;
@@ -897,4 +1021,70 @@ footer .credit p {
   .desc-modal button {
     padding: 1rem 1.5rem;
   }
+
+  .contact h2 {
+    font-size: 3rem;
+  }
+
+  .contact .kontak-desc {
+    font-size: 1.2rem;
+  }
+
+  .contact .row {
+    flex-direction: column;
+  }
+
+  .contact .row .col-1 {
+    width: 100%;
+  }
+
+  .contact .row .form-input {
+    width: 100%;
+  }
+
+  .form-input button {
+    padding: 15px 0;
+    font-size: 15px;
+  }
+
+  footer .footer-row-1 {
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+
+  .footer-row-1 h2 {
+    text-align: center;
+  }
+
+  .footer-row-1 .customer-center {
+    width: 100%;
+    margin: 3rem 0 1.8rem;
+  }
+
+  .footer-row-1 .customer-center p, .footer-row-1 .nav-bottom > p{
+    font-size: 1.3rem;
+  }
+
+  .footer-row-1 .nav-bottom .links-bottom {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .footer-row-1 .nav-bottom .links-bottom a {
+    font-size: 1.3rem;
+  }
+
+  footer .footer-row-2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .footer-row-2 .social-media-groups {
+    margin-top: 3rem;
+  }
+
+  footer .footer-row-2 > p {
+    font-size: 1.3rem;
+  }
+
 }
